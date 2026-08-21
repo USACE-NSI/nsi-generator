@@ -1,3 +1,8 @@
+# Workflow
+The basic workflow takes primary inputs and converts them into standardized data formats.
+
+![workflow](../drawio/ExampleDatasets-WorkflowSteps.drawio.png)
+
 # Process primary input datasets
 Many primary data inputs are needed for the base NSI data, however, other processes may have less primary data to work through so these steps may not be possible. In those cases skipping this to get to a later step may need to be an external workflow to create the next layer input data.
 
