@@ -16,9 +16,8 @@ This dataset is a polygon that represents a larger zonal space that has informat
 
 ![parcel dataset](../drawio/ExampleDatasets-ParcelDataset.drawio.png)
 
-A parcel dataset is a set of polygons that represent parcels of land with zero to many buildings on the property. A building has an occupancy type and a set of ParcelAttributes.
+A parcel dataset is a set of polygons that represent parcels of land with attributes for a parcel. ParcelAttributes represent the minimum set of attributes necessary for it to be a viable option in generation of a fortified parcel dataset. A parcel dataset is joined with other spatial datasets that represent specialty buildings like prisons, schools, hospitals, etc and are joined to create a fortified parcel dataset. Since some of these alternative data elements help describe location and population characteristics those attributes are added and are stored for later processing, but they are optional in that many FortifiedParcels will not have that information at this point.
 
-4. A population dataset
+# A population dataset
 
  
- ![adf](../drawio/ExampleDatasets-DataStructures.drawio.png)
