@@ -8,10 +8,16 @@ The input footprint dataset is a spatial dataset that has inputfootprint geometr
 
 # A StructureZonalStatisticsDataset
 
-![footprint dataset](../drawio/ExampleDatasets-ZonalStructureStatsDataset.drawio.png)
+![zonal statistics dataset](../drawio/ExampleDatasets-ZonalStructureStatsDataset.drawio.png)
 
 This dataset is a polygon that represents a larger zonal space that has information about expected total number of structures within that space independently derived from the footprint records ideally. This dataset tracks at an aggregate spatial zone the quantity of structures not represented by footprints but expected to be there through other sources. The input to this process is an Footprint Dataset and a polygon with expected structure counts. The StructureZonalStatisticsDataset tracks the count of structures represented within a zone that are not accounted for by the footprints themselves, which will indicate how many structures are anticipated to fall back to parcel centroids or other means of placement within that zone.
-3. A fortified parcel dataset
+
+# A fortified parcel dataset
+
+![parcel dataset](../drawio/ExampleDatasets-ParcelDataset.drawio.png)
+
+A parcel dataset is a set of polygons that represent parcels of land with zero to many buildings on the property. A building has an occupancy type and a set of ParcelAttributes.
+
 4. A population dataset
 
  
