@@ -1,0 +1,31 @@
+namespace NsiGenerator.Parcels;
+
+public enum OccupancyTypeEnum
+{
+    RES1,
+    RES2,
+    RES3,
+    RES4,
+    RES5,
+    RES6,
+    COM1,
+    COM2,
+    COM3,
+    COM4,
+    COM5,
+    COM6,
+    COM7,
+    COM8,
+    COM9,
+    COM10,
+    IND1,
+    IND2,
+    IND3,
+    IND4,
+    IND5,
+    IND6,
+    GOV1,
+    GOV2,
+    EDU1,
+    EDU2,
+}
