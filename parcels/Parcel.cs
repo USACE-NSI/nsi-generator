@@ -1,4 +1,4 @@
-using NetTopologySuite.Geometries;
+using Nsi.Geospatial.Geometry;
 
 namespace NsiGenerator.Parcels;
 
@@ -16,7 +16,7 @@ public sealed record ParcelAttributes
 /// A parcel in the raw input.
 public sealed record InputParcel
 {
-    public required Polygon ParcelGeometry { get; init; }
+    public required Feature ParcelGeometry { get; init; }
     public required ParcelAttributes Attributes { get; init; }
 }
 

@@ -1,4 +1,4 @@
-using NetTopologySuite.Geometries;
+using Nsi.Geospatial.Geometry;
 
 namespace NsiGenerator.Footprints;
 
@@ -6,7 +6,7 @@ namespace NsiGenerator.Footprints;
 /// source-level metadata is carried by the owning dataset.
 public sealed record InputFootprint
 {
-    public required Polygon Geometry { get; init; }
+    public required Feature Geometry { get; init; }
 }
 
 /// One raw source of footprints. PriorityOrder decides which dataset wins when

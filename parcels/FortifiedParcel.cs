@@ -1,4 +1,4 @@
-using NetTopologySuite.Geometries;
+using Nsi.Geospatial.Geometry;
 
 namespace NsiGenerator.Parcels;
 
@@ -28,7 +28,7 @@ public sealed record FortifiedBuilding
 /// A parcel joined with specialty building data.
 public sealed record FortifiedParcel
 {
-    public required Polygon ParcelGeometry { get; init; }
+    public required Feature ParcelGeometry { get; init; }
     public IReadOnlyList<FortifiedBuilding> Buildings { get; init; } = [];
 }
 

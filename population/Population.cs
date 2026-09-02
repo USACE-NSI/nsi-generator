@@ -1,4 +1,4 @@
-using NetTopologySuite.Geometries;
+using Nsi.Geospatial.Geometry;
 
 namespace NsiGenerator.Population;
 
@@ -13,7 +13,7 @@ public sealed record PopulationSet
 /// A zonal space (e.g. census block/tract) with expected demographic composition.
 public sealed record PopulationZone
 {
-    public required Polygon Zone { get; init; }
+    public required Feature Zone { get; init; }
     public int Over65 { get; init; }
     public int Under65 { get; init; }
 
