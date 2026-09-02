@@ -1,0 +1,75 @@
+## .NET build outputs
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]uild/
+bld/
+[Bb]in/
+
+## NuGet
+*.nupkg
+*.snupkg
+*.nuget.props
+*.nuget.targets
+packages/
+*.nupkg.metadata
+
+## Rider / ReSharper
+.idea/
+*.sln.iml
+*.user
+*.userosscache
+*.sln.docstates
+
+## Visual Studio
+.vs/
+.vsconfig
+*.suo
+*.user
+*.userprefs
+*.userosscache
+*.sln.docstates
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+## Visual Studio cache/options
+*.cache
+*.pdb
+*.dbg
+*.binlog
+*.log
+
+## VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+## Test results
+[Tt]est[Rr]esult*/
+*.trx
+*.coverage
+*.coveragexml
+coverage/
+coverage.*.xml
+*.opencover.xml
+
+## OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+## Native / GDAL artifacts (Geospatial dependency)
+*.so
+*.dll
+*.dylib
+*.pdb
+*.cache
+/runfile-discovery/
+dotnet/runfile-discovery/
+*.staging.json
