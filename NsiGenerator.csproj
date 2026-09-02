@@ -9,9 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Nsi.Geospatial" Version="0.0.2" />
-    <PackageReference Include="Nsi.Geospatial.Io" Version="0.0.2" />
-    <PackageReference Include="Nsi.Geospatial.Reprojection" Version="0.0.2" />
+    <PackageReference Include="Nsi.Geospatial" Version="0.0.3" />
+    <PackageReference Include="Nsi.Geospatial.Io" Version="0.0.3" />
+    <PackageReference Include="Nsi.Geospatial.Reprojection" Version="0.0.3" />
   </ItemGroup>
 
 </Project>
