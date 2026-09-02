@@ -19,7 +19,7 @@ public static class Program
 
             var feature = new Feature();
             feature.AddPart(part);
-            feature.ComputeMbr();
+            feature.ComputeBoundingBox();
             return feature;
         }
 
