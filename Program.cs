@@ -124,7 +124,7 @@ public static class Program
 
     /// Combines input footprint datasets: the same geometry in multiple datasets
     /// resolves to the dataset with the best (lowest) PriorityOrder.
-    static FootprintDataset ConsolidateFootprints(IReadOnlyList<InputFootprintDataset> datasets)
+    internal static FootprintDataset ConsolidateFootprints(IReadOnlyList<InputFootprintDataset> datasets)
     {
         return new FootprintDataset
         {
@@ -150,7 +150,7 @@ public static class Program
     }
 
     /// A stable dedupe key for a polygon Feature: the exterior ring's coordinates.
-    static string RingKey(Feature feature)
+    internal static string RingKey(Feature feature)
     {
         var ring = feature.Parts.Count > 0 ? feature.Parts[0].Vertices : [];
         return string.Join(";", ring.Select(v => $"{v.X},{v.Y}"));

@@ -7,7 +7,9 @@
     <Nullable>enable</Nullable>
     <RootNamespace>NsiGenerator</RootNamespace>
   </PropertyGroup>
-
+  <ItemGroup>
+    <InternalsVisibleTo Include="NsiGenerator.Tests" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Nsi.Geospatial" Version="0.0.3" />
     <PackageReference Include="Nsi.Geospatial.Io" Version="0.0.3" />
