@@ -9,7 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="NetTopologySuite" Version="2.5.0" />
+    <PackageReference Include="Nsi.Geospatial" Version="0.0.2" />
+    <PackageReference Include="Nsi.Geospatial.Io" Version="0.0.2" />
+    <PackageReference Include="Nsi.Geospatial.Reprojection" Version="0.0.2" />
   </ItemGroup>
 
 </Project>
