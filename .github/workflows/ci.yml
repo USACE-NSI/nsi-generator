@@ -17,12 +17,11 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: |
-            8.0.x
             10.0.x
+            8.0.x
 
-      # Inject the org PAT directly into the GitHub Packages NuGet source.
-      # This authenticates every request (index.json + /download/... + /query/...)
-      # and is more reliable than relying on setup-dotnet's NUGET_AUTH_TOKEN.
+      # Inject the org PAT into the GitHub Packages NuGet source so restore can
+      # read the private Nsi.Geospatial* packages (nuget.config maps them there).
       - name: Authenticate to GitHub Packages
         shell: bash
         env:
@@ -35,13 +34,13 @@ jobs:
             --store-password-in-clear-text
 
       - name: Restore
-        run: dotnet restore
+        run: dotnet restore NsiGenerator.slnx
 
       - name: Build
-        run: dotnet build --no-restore --configuration Release
+        run: dotnet build NsiGenerator.slnx --no-restore --configuration Release
 
       - name: Test
-        run: dotnet test --no-build --configuration Release --logger "trx;LogFileName=results.trx"
+        run: dotnet test NsiGenerator.slnx --no-build --configuration Release --logger "trx;LogFileName=results.trx"
 
       - name: Upload test results
         if: always()
