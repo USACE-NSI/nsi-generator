@@ -16,14 +16,25 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '8.0.x'
+          dotnet-version: |
+            8.0.x
+            10.0.x
 
-      # Authenticate to the private GitHub Packages feed used by nuget.config
-      # for the Nsi.Geospatial* packages. The org PAT is required because the
-      # default GITHUB_TOKEN cannot read the org's private packages.
-      - name: Restore
+      # Inject the org PAT directly into the GitHub Packages NuGet source.
+      # This authenticates every request (index.json + /download/... + /query/...)
+      # and is more reliable than relying on setup-dotnet's NUGET_AUTH_TOKEN.
+      - name: Authenticate to GitHub Packages
+        shell: bash
         env:
-          NUGET_AUTH_TOKEN: ${{ secrets.USACE_NSI_TOKEN }}
+          USACE_NSI_TOKEN: ${{ secrets.USACE_NSI_TOKEN }}
+        run: |
+          dotnet nuget update source github \
+            --configfile nuget.config \
+            --username "USACE_NSI_TOKEN" \
+            --password "$USACE_NSI_TOKEN" \
+            --store-password-in-clear-text
+
+      - name: Restore
         run: dotnet restore
 
       - name: Build

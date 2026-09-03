@@ -19,15 +19,26 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '8.0.x'
+          dotnet-version: |
+            8.0.x
+            10.0.x
 
       - name: Resolve version
         id: version
         run: echo "VERSION=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
 
-      - name: Restore
+      - name: Authenticate to GitHub Packages
+        shell: bash
         env:
-          NUGET_AUTH_TOKEN: ${{ secrets.USACE_NSI_TOKEN }}
+          USACE_NSI_TOKEN: ${{ secrets.USACE_NSI_TOKEN }}
+        run: |
+          dotnet nuget update source github \
+            --configfile nuget.config \
+            --username "USACE_NSI_TOKEN" \
+            --password "$USACE_NSI_TOKEN" \
+            --store-password-in-clear-text
+
+      - name: Restore
         run: dotnet restore
 
       - name: Publish
