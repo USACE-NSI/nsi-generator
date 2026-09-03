@@ -19,10 +19,11 @@ jobs:
           dotnet-version: '8.0.x'
 
       # Authenticate to the private GitHub Packages feed used by nuget.config
-      # for the Nsi.Geospatial* packages.
+      # for the Nsi.Geospatial* packages. The org PAT is required because the
+      # default GITHUB_TOKEN cannot read the org's private packages.
       - name: Restore
         env:
-          NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NUGET_AUTH_TOKEN: ${{ secrets.USACE_NSI_TOKEN }}
         run: dotnet restore
 
       - name: Build
