@@ -4,7 +4,7 @@ The NSI Generator processes standard data structures at the major processes in t
 workflow. Raw base data is highly variable, so each step that touches it mutates it
 into one of the standard structures defined in [datasets.md](datasets.md). This
 document covers the workflow steps only; the overall diagram is the **WorkflowSteps**
-page of [ExampleDatasets.drawio](../drawio/ExampleDatasets.drawio).
+page of [ExampleDatasets.drawio](./drawio/ExampleDatasets.drawio).
 
 ## Inputs
 

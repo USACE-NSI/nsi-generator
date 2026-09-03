@@ -8,6 +8,8 @@ x86/
 [Bb]uild/
 bld/
 [Bb]in/
+dotnet/
+data/
 
 ## NuGet
 *.nupkg

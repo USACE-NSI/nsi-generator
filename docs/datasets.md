@@ -10,7 +10,7 @@ structure placement where footprints are missing.
 
 # A set of input footprint datasets
 
-![footprint dataset](../drawio/ExampleDatasets-FootprintDataset.drawio.png)
+![footprint dataset](./drawio/ExampleDatasets-FootprintDataset.drawio.png)
 
 The input footprint dataset is a spatial dataset that has inputfootprint geometries
 for structures. An input footprint dataset comes with a priority order that defines
@@ -24,7 +24,7 @@ building heights given missing data in the underlying input footprint dataset.
 
 # A StructureZonalStatisticsDataset
 
-![zonal statistics dataset](../drawio/ExampleDatasets-ZonalStructureStatsDataset.drawio.png)
+![zonal statistics dataset](./drawio/ExampleDatasets-ZonalStructureStatsDataset.drawio.png)
 
 This dataset is a polygon that represents a larger zonal space that has information
 about expected total number of structures within that space independently derived
@@ -38,7 +38,7 @@ fall back to parcel centroids or other means of placement within that zone.
 
 # A fortified parcel dataset
 
-![parcel dataset](../drawio/ExampleDatasets-ParcelDataset.drawio.png)
+![parcel dataset](./drawio/ExampleDatasets-ParcelDataset.drawio.png)
 
 A parcel dataset is a set of polygons that represent parcels of land with
 attributes for a parcel. ParcelAttributes represent the minimum set of attributes
@@ -52,7 +52,7 @@ will not have that information at this point.
 
 # A population dataset
 
-![population dataset](../drawio/ExampleDatasets-PopulationDataset.drawio.png)
+![population dataset](./drawio/ExampleDatasets-PopulationDataset.drawio.png)
 
 A population dataset is a set of population zones. A population zone is a polygon
 that represents a larger zonal space (for example a census block or tract) that
