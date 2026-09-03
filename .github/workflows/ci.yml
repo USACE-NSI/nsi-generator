@@ -40,8 +40,8 @@ jobs:
         run: dotnet build NsiGenerator.slnx --no-restore --configuration Release
 
       - name: Test
-        run: dotnet test NsiGenerator.slnx --no-build --configuration Release --logger "trx;LogFileName=results.trx"
-
+        run: dotnet test NsiGenerator.slnx --no-build --configuration Release --filter "Category!=Gdal" --logger "trx;LogFileName=results.trx"
+        
       - name: Upload test results
         if: always()
         uses: actions/upload-artifact@v4

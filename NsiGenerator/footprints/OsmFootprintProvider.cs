@@ -1,3 +1,5 @@
+using Nsi.Geospatial.Io;
+
 namespace NsiGenerator.Footprints;
 
 /// <summary>
@@ -8,10 +10,12 @@ public sealed class OsmFootprintProvider : FootprintProvider
 {
     public OsmFootprintProvider(
         string path,
+        IFeatureSource? reader = null,
         string name = "OpenStreetMap",
         int priorityOrder = 4)
     {
         SourcePaths = [path];
+        Reader = reader ?? new SpatialReader();
         Name = name;
         PriorityOrder = priorityOrder;
     }
@@ -19,4 +23,5 @@ public sealed class OsmFootprintProvider : FootprintProvider
     public string Name { get; }
     public int PriorityOrder { get; }
     public IEnumerable<string> SourcePaths { get; }
+    public IFeatureSource Reader { get; }
 }
