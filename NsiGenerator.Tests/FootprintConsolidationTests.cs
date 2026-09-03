@@ -17,7 +17,7 @@ public class FootprintConsolidationTests
 
         var feature = new Feature();
         feature.AddPart(part);
-        feature.ComputeMbr();
+        feature.ComputeBoundingBox();
         return feature;
     }
 
@@ -75,10 +75,10 @@ public class FootprintConsolidationTests
     {
         var bing = Dataset("Bing", 1, UnitSquare); // 10x10 => 100
 
-        var result = Program.ConsolidateFootprints(new[] { bing })
+        Footprints.Footprint result = Program.ConsolidateFootprints(new[] { bing })
             .Footprints.Single();
-
-        Assert.Equal(100.0, result.SquareFootage, precision: 6);
+        double sf = (double)result.SquareFootage;
+        Assert.Equal(100.0, sf, precision: 6);
     }
 
     [Fact]
