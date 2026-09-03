@@ -5,9 +5,9 @@ namespace NsiGenerator.Footprints;
 /// <summary>
 /// Reads raw building-footprint geometries from one source on the local file
 /// system and yields them as a standard <see cref="InputFootprintDataset"/>.
-/// Each implementation targets a specific raw source (USA Structures / ORNL,
-/// Microsoft USbuildings, OpenStreetMap) and uses the geospatial.io
-/// <see cref="SpatialReader"/> (GDAL/OGR) to read the files.
+/// Each implementation supplies only its <see cref="Name"/>, <see cref="PriorityOrder"/>
+/// and <see cref="SourcePaths"/>; the shared <see cref="Read()"/> default method
+/// does the reading through the geospatial.io <see cref="IFeatureSource"/> (GDAL/OGR).
 /// </summary>
 public interface FootprintProvider
 {
@@ -24,8 +24,14 @@ public interface FootprintProvider
     IEnumerable<string> SourcePaths { get; }
 
     /// <summary>
-    /// Reads every footprint from the provider's local <see cref="SourcePaths"/> into a
-    /// standard <see cref="InputFootprintDataset"/>. Shared by all providers.
+    /// The spatial reader used to decode the source files. Defaults to
+    /// <see cref="SpatialReader"/>, but is injectable for tests.
+    /// </summary>
+    IFeatureSource Reader { get; }
+
+    /// <summary>
+    /// Reads every footprint from <see cref="SourcePaths"/> into a standard
+    /// <see cref="InputFootprintDataset"/>. Shared by all providers.
     /// </summary>
     InputFootprintDataset Read()
     {
@@ -34,7 +40,7 @@ public interface FootprintProvider
             Name = Name,
             PriorityOrder = PriorityOrder,
             Footprints = SourcePaths
-                .SelectMany(path => new SpatialReader().Read(path).Features)
+                .SelectMany(path => Reader.Read(path).Features)
                 .Select(f => new InputFootprint { Geometry = f })
                 .ToList(),
         };

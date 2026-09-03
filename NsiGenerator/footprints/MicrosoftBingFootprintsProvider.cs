@@ -1,3 +1,5 @@
+using Nsi.Geospatial.Io;
+
 namespace NsiGenerator.Footprints;
 
 /// <summary>
@@ -8,10 +10,12 @@ public sealed class MicrosoftBingFootprintsProvider : FootprintProvider
 {
     public MicrosoftBingFootprintsProvider(
         string geojsonPath,
+        IFeatureSource? reader = null,
         string name = "USbuildings",
         int priorityOrder = 3)
     {
         SourcePaths = [geojsonPath];
+        Reader = reader ?? new SpatialReader();
         Name = name;
         PriorityOrder = priorityOrder;
     }
@@ -19,4 +23,5 @@ public sealed class MicrosoftBingFootprintsProvider : FootprintProvider
     public string Name { get; }
     public int PriorityOrder { get; }
     public IEnumerable<string> SourcePaths { get; }
+    public IFeatureSource Reader { get; }
 }
