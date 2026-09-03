@@ -20,8 +20,8 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: |
-            8.0.x
             10.0.x
+            8.0.x
 
       - name: Resolve version
         id: version
@@ -39,10 +39,10 @@ jobs:
             --store-password-in-clear-text
 
       - name: Restore
-        run: dotnet restore
+        run: dotnet restore NsiGenerator.slnx
 
       - name: Publish
-        run: dotnet publish NsiGenerator.csproj \
+        run: dotnet publish NsiGenerator/NsiGenerator.csproj \
           --configuration Release \
           --runtime linux-x64 \
           --self-contained true \

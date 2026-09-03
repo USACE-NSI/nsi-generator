@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="NsiGenerator.Tests/NsiGenerator.Tests.csproj" />
+  <Project Path="NsiGenerator/NsiGenerator.csproj" />
+</Solution>

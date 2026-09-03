@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NsiGenerator.csproj" />
+    <ProjectReference Include="..\NsiGenerator\NsiGenerator.csproj" />
   </ItemGroup>
 
 </Project>
