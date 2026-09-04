@@ -30,8 +30,8 @@ public static class Program
             PriorityOrder = 1,
             Footprints =
             [
-                new InputFootprint { Geometry = Poly((0, 0), (10, 0), (10, 10), (0, 10), (0, 0)) },
-                new InputFootprint { Geometry = Poly((20, 20), (30, 20), (30, 30), (20, 30), (20, 20)) },
+                new InputFootprint { Geometry = Poly((0, 0), (10, 0), (10, 10), (0, 10), (0, 0)), BuildingHeight = 3, BuildingHeightIsDefault = true },
+                new InputFootprint { Geometry = Poly((20, 20), (30, 20), (30, 30), (20, 30), (20, 20)), BuildingHeight = 3, BuildingHeightIsDefault = true },
             ],
         };
         var usaStructures = new InputFootprintDataset
@@ -41,8 +41,8 @@ public static class Program
             Footprints =
             [
                 // Same footprint as Bing's first; Bing (priority 1) wins.
-                new InputFootprint { Geometry = Poly((0, 0), (10, 0), (10, 10), (0, 10), (0, 0)) },
-                new InputFootprint { Geometry = Poly((40, 0), (50, 0), (50, 10), (40, 10), (40, 0)) },
+                new InputFootprint { Geometry = Poly((0, 0), (10, 0), (10, 10), (0, 10), (0, 0)), BuildingHeight = 3, BuildingHeightIsDefault = true },
+                new InputFootprint { Geometry = Poly((40, 0), (50, 0), (50, 10), (40, 10), (40, 0)), BuildingHeight = 3, BuildingHeightIsDefault = true },
             ],
         };
 
