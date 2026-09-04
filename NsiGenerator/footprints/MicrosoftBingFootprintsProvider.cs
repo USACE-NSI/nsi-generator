@@ -24,4 +24,6 @@ public sealed class MicrosoftBingFootprintsProvider : FootprintProvider
     public int PriorityOrder { get; }
     public IEnumerable<string> SourcePaths { get; }
     public IFeatureSource Reader { get; }
+    /// <summary>No usable attributes in the source; everything is defaulted.</summary>
+    public FootprintFieldMap FieldMap { get; } = FootprintFieldMap.Empty;
 }
