@@ -23,4 +23,6 @@ public sealed class UsaStructuresFootprintProvider : FootprintProvider
     public int PriorityOrder { get; }
     public IEnumerable<string> SourcePaths { get; }
     public IFeatureSource Reader { get; }
+    public FootprintFieldMap FieldMap { get; } = FootprintFieldMap.Build(
+        new("HEIGHT", StandardFootprintField.BuildingHeight, ValueUnit.Meters));
 }

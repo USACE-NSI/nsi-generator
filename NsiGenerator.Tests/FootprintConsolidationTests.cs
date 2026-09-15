@@ -27,7 +27,7 @@ public class FootprintConsolidationTests
             Name = name,
             PriorityOrder = priority,
             Footprints = geometries
-                .Select(g => new InputFootprint { Geometry = g })
+                .Select(g => new InputFootprint { Geometry = g, BuildingHeight=3, BuildingHeightIsDefault=true })
                 .ToList(),
         };
 

@@ -24,4 +24,8 @@ public sealed class OsmFootprintProvider : FootprintProvider
     public int PriorityOrder { get; }
     public IEnumerable<string> SourcePaths { get; }
     public IFeatureSource Reader { get; }
+    public FootprintFieldMap FieldMap { get; } = FootprintFieldMap.Build(
+        new("height", StandardFootprintField.BuildingHeight, ValueUnit.Meters),
+        new("building:floor_area", StandardFootprintField.SquareFootage, ValueUnit.SquareMeters),
+        new("building:levels", StandardFootprintField.BuildingLevels, ValueUnit.StoryCount));
 }
